@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 16px !important;
+}
+
+::selection{
+  color: #fff;
+  background: #5256AD;
+}
+.wrapper{
+  margin-top: 420px;
+  width: 533px;
+  padding: 15px;
+  border-radius: 4px;
+  background: #2b2e38;
+  color: #fff;
+  box-shadow: 7px 7px 20px rgba(0,0,0,0.05);
+  text-align: left;
+  form{
+    margin: 15px;
+    textarea, select, button {
+      outline: none;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 5px;
+    }
+    button{
+      height: 52px;
+      color: #fff;
+      font-size: 17px;
+      cursor: pointer;
+      margin-top: 10px;
+      background: #675AFE;
+      transition: 0.3s ease;
+      :hover{
+        background: #4534fe;
+      }
+    }
+    .row{
+      display: flex;
+      margin-bottom: 20px;
+      flex-direction: column;
+      label{
+        font-size: 18px;
+        margin-bottom: 5px;
+        :nth-child(2){
+          font-size: 17px;
+        }
+      }
+      textarea{
+        resize: none;
+        height: 45px;
+        font-size: 15px;
+        padding: 8px 10px;
+        border: 1px solid #999;
+        overflow: hidden;
+      }
+    }
+  }
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .col {
+      margin-bottom: 20px;
+      width: 49%;
+      .outer{
+        height: 47px;
+        display: flex;
+        padding: 0 10px;
+        align-items: center;
+        border-radius: 5px;
+        justify-content: center;
+        /* border: 1px solid #999; */
+        background-color: #3c404b;
+      }
+      select{
+        color: #fff;
+        font-size: 14px;
+        background: none;
+        ::-webkit-scrollbar{
+          width: 8px;
+        }
+        ::-webkit-scrollbar-track{
+          background: #fff;
+        }
+        ::-webkit-scrollbar-thumb{
+          background: #888;
+          border-radius: 8px;
+          border-right: 2px solid #ffffff;
+        }
+      }
+    }
+  }
+}
+
+
+@media(max-width: 400px){
+  .wrapper{
+    max-width: 345px;
+    width: 100%;
+  }
+}
