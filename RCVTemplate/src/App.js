@@ -1,10 +1,10 @@
 // Import dependencies
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
 import Webcam from "react-webcam";
 import "./App.css";
 import Controls from './Controls';
-import { nextFrame } from "@tensorflow/tfjs";
+// import { nextFrame } from "@tensorflow/tfjs";
 // 2. TODO - Import drawing utility here
 // e.g. import { drawRect } from "./utilities";
 import {drawRect} from "./utilities"; 
@@ -52,7 +52,7 @@ function App() {
       const casted = resized.cast('int32')
       const expanded = casted.expandDims(0)
       const obj = await net.executeAsync(expanded)
-      console.log(obj)
+      // console.log(obj)
 
       const boxes = await obj[1].array()
       const classes = await obj[2].array()
@@ -79,7 +79,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Webcam
+        {/* <Webcam
           className="Webcam"
           ref={webcamRef}
           muted={true} 
@@ -110,7 +110,7 @@ function App() {
             width: 533,
             height: 400,
           }}
-        />
+        /> */}
 
         <Controls />
       </header>

@@ -1,3 +1,6 @@
+// import Controls from './Controls';
+// import React, { Component }  from 'react';
+
 // Define our labelmap
 const labelMap = {
     1:{name:'Hello', color:'red'},
@@ -26,6 +29,9 @@ export const drawRect = (boxes, classes, scores, threshold, imgWidth, imgHeight,
             ctx.fillText(labelMap[text]['name'] + ' - ' + Math.round(scores[i]*100)/100, x*imgWidth, y*imgHeight-10)
             ctx.rect(x*imgWidth, y*imgHeight, width*imgWidth/2, height*imgHeight/1.5);
             ctx.stroke()
+            let pT = labelMap[text]['name'];
+            window.localStorage.setItem('word', pT);
         }
     }
 }
+
