@@ -63,7 +63,7 @@ function App() {
 
       // 5. TODO - Update drawing utility
       // drawSomething(obj, ctx)  
-      requestAnimationFrame(()=>{drawRect(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)}); 
+      requestAnimationFrame(()=>{drawRect(boxes[0], classes[0], scores[0], .95, videoWidth, videoHeight, ctx)}); 
 
       tf.dispose(img)
       tf.dispose(resized)
@@ -79,7 +79,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <Webcam
+        <Webcam
           className="Webcam"
           ref={webcamRef}
           muted={true} 
@@ -110,7 +110,7 @@ function App() {
             width: 533,
             height: 400,
           }}
-        /> */}
+        />
 
         <Controls />
       </header>

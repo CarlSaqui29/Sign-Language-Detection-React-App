@@ -11,7 +11,7 @@ function Controls() {
     ['kab la-haw', 'Ag-yama-nak unay!', 'A-ya-yaten ka', 'wen', 'ha-an']
   ];
 
-  const engList = ['hello', 'thank you', 'i love you', 'yes', 'no'];
+  const engList = ['Hello', 'Thank You', 'I Love You', 'Yes', 'No'];
 
   // set default Dialect
   window.localStorage.setItem('dialect', "tagalog");
@@ -23,12 +23,12 @@ function Controls() {
 
   const speechHandler = (voiceNum) => {
     let word = window.localStorage.getItem('word');
+    console.log(word);
     let voices = window.speechSynthesis.getVoices();
-    msg.text = word;
-
     let voiceName = window.localStorage.getItem('voice');
     let dialect = window.localStorage.getItem('dialect');
     console.log(voiceName);
+    console.log(dialect);
     // check what voice will use
     if (voiceName == "Google Bahasa Indonesiaid-ID") {
       voiceNum = 56;
@@ -38,9 +38,17 @@ function Controls() {
       voiceNum = 49;
     }
     // check what translation dialect will use
-    // if (dialect == 'tagalog') {
-    //   engList.indexOf("Apple")
-    // }
+    let idx = 0;
+    idx = engList.indexOf(word);
+    if (dialect == 'tagalog') {   
+      word = wordList[0][idx];
+    } else if (dialect == "ilocano") {
+      word = wordList[1][idx];
+    } else {
+      word = wordList[2][idx];
+    }
+    // init speak
+    msg.text = word;
     msg.voice = voices[voiceNum];
     window.speechSynthesis.speak(msg);
   }
