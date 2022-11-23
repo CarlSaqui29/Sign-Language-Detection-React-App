@@ -4,6 +4,17 @@ import "./Controls.css";
 function Controls() {
   const msg = new SpeechSynthesisUtterance();
 
+  const [items, setItems] = useState("");
+
+  // useEffect(() => {
+  //   const items = localStorage.getItem('word');
+  //   if (items) {
+  //     setItems(items);
+  //   }
+  // }, [items]);
+
+  
+
   // init translation word
   const wordList = [
     ['Ka-mus-ta', 'sa-lamat', 'Mahal Kita', 'o oh', 'hin dech'],
@@ -69,7 +80,7 @@ function Controls() {
       <div className='form'>
         {/* <div className="row">
           <label>Detected Sign Language</label>
-          <textarea></textarea>
+          <textarea value={items}>{items}</textarea>
         </div> */}
         <div className="flex">
           <div className="col">
