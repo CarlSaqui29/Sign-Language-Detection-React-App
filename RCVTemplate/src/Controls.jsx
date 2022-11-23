@@ -4,7 +4,7 @@ import "./Controls.css";
 function Controls() {
   const msg = new SpeechSynthesisUtterance();
 
-  const [items, setItems] = useState("");
+  // const [items, setItems] = useState("");
 
   // useEffect(() => {
   //   const items = localStorage.getItem('word');
@@ -12,8 +12,6 @@ function Controls() {
   //     setItems(items);
   //   }
   // }, [items]);
-
-  
 
   // init translation word
   const wordList = [
@@ -102,7 +100,6 @@ function Controls() {
                         {option}
                     </option>
                 })}
-                
               </select>
             </div>
           </div>
