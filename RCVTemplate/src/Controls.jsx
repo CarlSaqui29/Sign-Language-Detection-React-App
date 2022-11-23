@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import "./Controls.css";
 
 function Controls() {
@@ -39,9 +39,9 @@ function Controls() {
     console.log(voiceName);
     console.log(dialect);
     // check what voice will use
-    if (voiceName == "Google Bahasa Indonesiaid-ID") {
+    if (voiceName === "Google Bahasa Indonesiaid-ID") {
       voiceNum = 56;
-    } else if (voiceName == "Google हिन्दीhi-IN") {
+    } else if (voiceName === "Google हिन्दीhi-IN") {
       voiceNum = 55;
     } else {
       voiceNum = 49;
@@ -49,9 +49,9 @@ function Controls() {
     // check what translation dialect will use
     let idx = 0;
     idx = engList.indexOf(word);
-    if (dialect == 'tagalog') {   
+    if (dialect === 'tagalog') {   
       word = wordList[0][idx];
-    } else if (dialect == "ilocano") {
+    } else if (dialect === "ilocano") {
       word = wordList[1][idx];
     } else {
       word = wordList[2][idx];
