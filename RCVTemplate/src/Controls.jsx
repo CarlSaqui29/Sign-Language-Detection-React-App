@@ -51,7 +51,7 @@ function Controls() {
     idx = engList.indexOf(word);
     if (dialect === 'tagalog') {   
       word = wordList[0][idx];
-    } else if (dialect === "ilocano") {
+    } else if (dialect === "cebuano") {
       word = wordList[1][idx];
     } else {
       word = wordList[2][idx];
